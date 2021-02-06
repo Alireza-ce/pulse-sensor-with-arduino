@@ -1,0 +1,49 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  background-color: #eee;
+}
+
+body {
+  font-family: 'helvetica';
+}
+
+.container {
+  width: 100%;
+  max-width: 700px;
+  margin: auto;
+  padding: 0px 15px;
+  position: relative;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 12px 0;
+
+  mat-form-field , button {
+    width: 100%;
+    max-width: 304px;
+    margin: 4px 0px;
+    font-size: 1.5rem;
+
+    @media (min-width: 1024px) {
+      max-width: 350px;
+    }
+  }
+
+  button{
+
+  }
+}
+
