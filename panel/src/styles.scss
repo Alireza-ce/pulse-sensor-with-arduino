@@ -3,13 +3,14 @@
   padding: 0;
   box-sizing: border-box;
   outline: none;
+  font-family: "IranSans" !important;
 }
 
 html,
 body {
   margin: 0;
   height: 100%;
-  background-color: #eee;
+  background-color: #eee!important;
 }
 
 body {
@@ -30,20 +31,29 @@ form {
   align-items: center;
   flex-direction: column;
   padding: 12px 0;
+  font-family: "iransans" !important;
+  mat-form-field{
+    text-align: right!important;
+  }
 
-  mat-form-field , button {
+  mat-form-field,
+  button {
     width: 100%;
     max-width: 304px;
     margin: 4px 0px;
     font-size: 1.5rem;
+
 
     @media (min-width: 1024px) {
       max-width: 350px;
     }
   }
 
-  button{
-
+  button {
+    text-align: center;
   }
 }
 
+.mat-simple-snackbar{
+  justify-content: end !important;
+}

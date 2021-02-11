@@ -1,25 +1,25 @@
 <div class="panel">
   <div class="container">
-    <p class="seila-number">Device serial number: 123569882</p>
+    <p class="serial-number">شماره سریال دستگاه: 123569882</p>
     <div class="row">
       <div class="period">
         <p> Choose start and end date </p>
         <mat-form-field appearance="fill">
-          <mat-label>Enter a date range</mat-label>
+          <mat-label>بازه تاریخی را انتخاب کنید</mat-label>
           <mat-date-range-input [formGroup]="range" [rangePicker]="picker">
-            <input matStartDate formControlName="start" placeholder="Start date">
-            <input matEndDate formControlName="end" placeholder="End date">
+            <input matStartDate formControlName="start" placeholder="تاریخ شروع">
+            <input matEndDate formControlName="end" placeholder="تاریخ پایان">
           </mat-date-range-input>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-date-range-picker #picker></mat-date-range-picker>
         </mat-form-field>
-        <button mat-raised-button color="primary">Submit</button>
+        <button mat-raised-button color="primary" (click)="submitDate()">Submit</button>
       </div>
       <div class="last-record">
         <p> Choose last record number </p>
-        <mat-form-field appearance="outline">
-          <mat-label>Last Record Number</mat-label>
-          <input matInput placeholder="Last Record Number">
+        <mat-form-field appearance="fill">
+          <mat-label>تعداد اخرین گزارش ها</mat-label>
+          <input matInput placeholder="تعداد آخرین گزارش">
         </mat-form-field>
         <button mat-raised-button color="warn">Submit</button>
       </div>

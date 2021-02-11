@@ -1,3 +1,7 @@
+.serial-number {
+  text-align: right;
+}
+
 .row {
   display: flex;
   flex-wrap: wrap;
@@ -5,22 +9,35 @@
   border-radius: 8px;
   box-shadow: 5px 5px 10px rgba(255, 245, 245, .8);
 
+  ::ng-deep {
+    .mat-date-range-input-container {
+      align-items: initial !important;
+    }
+    .mat-date-range-input-end-wrapper{
+      text-align: left;
+    }
+  }
+
   .period,
   .last-record {
     width: 50%;
     padding: 12px;
-    
-    p{
-        text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    p {
+      text-align: center;
     }
 
     mat-form-field {
-        width: 100%;
-      }
-  
-      button{
-          width: 100%;
-      }
+      width: 100%;
+      text-align: right !important;
+    }
+
+    button {
+      width: 100%;
+    }
   }
 
   .period {

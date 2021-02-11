@@ -1,12 +1,12 @@
 <div class="login">
   <div class="container">
 
-    <form>
-      <mat-form-field appearance="outline">
-        <mat-label>Serial Number</mat-label>
-        <input matInput placeholder="Serial Number">
+    <form (ngSubmit)="submit()" >
+      <mat-form-field>
+        <mat-label>شماره سریال دستگاه</mat-label>
+        <input matInput [formControl]="serial" placeholder="شماره سریال">
       </mat-form-field>
-      <button mat-raised-button color="primary">Submit</button>
+      <button mat-raised-button color="primary">تایید</button>
     </form>
   </div>
 </div>

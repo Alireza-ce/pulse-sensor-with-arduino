@@ -1,0 +1,28 @@
+<div class="analysis">
+  <div class="container">
+    <div style="display: block">
+      <canvas
+        mdbChart
+        [chartType]="chartType"
+        [datasets]="chartDatasets"
+        [labels]="chartLabels"
+        [colors]="chartColors"
+        [options]="chartOptions"
+        [legend]="true"
+        (chartHover)="chartHovered($event)"
+        (chartClick)="chartClicked($event)"
+      >
+      </canvas>
+    </div>
+    <div style="display: block">
+        <canvas mdbChart
+            chartType="pie"
+            [datasets]="PieChartDatasets"
+            [labels]="PieChartLabels"
+            [colors]="PieChartColors"
+            [options]="chartOptions"
+            [legend]="true">
+        </canvas>
+      </div>
+  </div>
+</div>
