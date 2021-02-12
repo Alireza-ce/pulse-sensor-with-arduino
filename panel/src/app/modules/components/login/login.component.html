@@ -1,12 +1,25 @@
 <div class="login">
   <div class="container">
+    <div class="title-box">
+      <ng-lottie [options]="optionsHeart"></ng-lottie>
+      <p class="main-title">سیستم تحلیل ضربان<span style="color: red;"> قلب </span></p>
+    </div>
+    <div class="login-form">
+      <form (ngSubmit)="submit()">
+        <div class="form-box">
 
-    <form (ngSubmit)="submit()" >
-      <mat-form-field>
-        <mat-label>شماره سریال دستگاه</mat-label>
-        <input matInput [formControl]="serial" placeholder="شماره سریال">
-      </mat-form-field>
-      <button mat-raised-button color="primary">تایید</button>
-    </form>
+        <p class="form-title">
+          ورود
+        </p>
+        <mat-form-field>
+          <mat-label>شماره سریال دستگاه</mat-label>
+          <input matInput [formControl]="serial" placeholder="شماره سریال" />
+        </mat-form-field>
+        <button mat-raised-button color="primary">تایید</button>
+                  
+      </div>
+      </form>
+      <ng-lottie [options]="options"></ng-lottie>
+    </div>
   </div>
 </div>

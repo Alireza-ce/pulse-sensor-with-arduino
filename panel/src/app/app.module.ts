@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { LottieModule } from 'ngx-lottie';
+import player from 'lottie-web';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -25,6 +26,9 @@ import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DatePipe } from '@angular/common';
 import { DetailComponent } from './modules/components/detail/detail.component';
 
+export function playerFactory() {
+  return player;
+}
 @NgModule({
   declarations: [AppComponent, LoginComponent, PanelComponent, AnalysisComponent, DetailComponent],
   imports: [
@@ -43,7 +47,8 @@ import { DetailComponent } from './modules/components/detail/detail.component';
     ReactiveFormsModule,
     MatNativeDateModule,
     MatSnackBarModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    LottieModule.forRoot({ player: playerFactory })
   ],
   providers: [MatDatepickerModule,
     SnackBarService,

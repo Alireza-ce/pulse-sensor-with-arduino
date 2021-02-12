@@ -120,37 +120,91 @@
 }
 
 .reasons {
- padding: 32px 0;
+  padding: 32px 0;
 
   .title {
     text-align: center;
     font-size: 30px;
-    color: white;
+    color: #383434;
     font-weight: bold;
   }
-  
-  .r-row{
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      .col-4-r{
-          width: 20%;
-          height: 100%;
-          padding: 12px;
-          .content{
-          padding: 8px;
-          text-align: center;
-            border-radius: 5px;
-          box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
+
+  .r-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .col-4-r {
+      width: 20%;
+      height: 100%;
+      padding: 12px;
+
+      .content {
+        padding: 8px;
+        text-align: center;
+        border-radius: 5px;
+        box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
           -5px -5px 5px rgba($color: #ffffff, $alpha: 0.7);
-            background-color: #eee;
-            p{
-               
-            }
-            img{
-                width: 100px;
-            }
-          }
+        background-color: #eee;
+
+        p {}
+
+        img {
+          width: 100px;
+        }
       }
+    }
+  }
+}
+
+.helping {
+  padding: 64px 0;
+
+  .help-title {
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    color: #383434;
+  }
+
+  .advise {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 32px;
+    .col-ad {
+      width: 33.3%;
+
+      .content {
+        padding: 0 24px 24px 24px;
+
+        text-align: center;
+        position: relative;
+        margin: 0 8px;
+        .overlay {
+          background-color: #ffffff;
+          position: absolute;
+          top: 20px;
+          left: 0;
+          width: 100%;
+          height: 80%;
+          z-index: 0;
+        }
+
+        img {
+          z-index: 2;
+          width: 100%;
+          position: relative;
+          height: 170px;
+   
+        }
+
+        p {
+          z-index: 2;
+          position: relative;
+          margin-top: 12px;
+          font-size: 16px;
+        }
+      }
+    }
   }
 }

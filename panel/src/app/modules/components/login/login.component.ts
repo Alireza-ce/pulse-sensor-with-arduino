@@ -3,6 +3,8 @@ import { FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SnackBarService } from '../../services/snack-bar.service';
 import { ApiService } from './../../services/api.service';
+import { AnimationItem } from 'lottie-web';
+import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
   selector: 'app-login',
@@ -11,6 +13,14 @@ import { ApiService } from './../../services/api.service';
 })
 export class LoginComponent implements OnInit {
   serial = new FormControl('');
+  options: AnimationOptions = {
+    path: '/assets/character.json',
+  };
+
+  optionsHeart:AnimationOptions = {
+    path: '/assets/heartbeat.json',
+  };
+ 
   constructor(private apiService: ApiService,private snackBarService:SnackBarService,private router:Router) { }
 
   ngOnInit(): void {
