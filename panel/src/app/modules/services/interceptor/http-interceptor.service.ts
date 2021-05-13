@@ -15,18 +15,20 @@ import { StateService } from './../state.service';
 export class HttpInterceptorService implements HttpInterceptor {
   constructor(
     private stateService: StateService
-  ) {}
+  ) { }
 
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler
   ): Observable<HttpEvent<any>> {
     this.stateService.startLoading();
- 
+
     return next.handle(req).pipe(
-      tap((event) => {}),
+      tap((event) => { }),
       finalize(() => {
-        this.stateService.endLoading();
+
+        setTimeout(() => { this.stateService.endLoading(); }, 1000);
+
       })
     );
   }

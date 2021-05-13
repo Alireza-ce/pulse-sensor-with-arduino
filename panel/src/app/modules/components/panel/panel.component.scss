@@ -1,14 +1,27 @@
 .serial-number {
   text-align: right;
 }
-
+.header-panel{
+  display: flex;
+  justify-content: space-between;
+  ng-lottie{
+    width: 120px;
+  }
+}
+.panel{
+  margin-bottom: 32px;
+}
 .row-p {
   display: flex;
   flex-wrap: wrap;
-  background-color: #e0e0e0;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8fcff;
+  margin-top: 24px;
   border-radius: 8px;
-  box-shadow: 5px 5px 10px rgba(255, 245, 245, .8);
-
+  padding: 12px 32px;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7);
   ::ng-deep {
     .mat-date-range-input-container {
       align-items: initial !important;
@@ -30,6 +43,13 @@
       text-align: center;
     }
 
+    .hint{
+      text-align: right;
+      span{
+        color: #e64343;
+      }
+    }
+
     mat-form-field {
       width: 100%;
       text-align: right !important;
@@ -40,7 +60,22 @@
     }
   }
 
-  .period {
-    border-right: 1px solid #616161;
+}
+
+.date-box{
+  background-color: white;
+}
+
+.head-panel{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 24px 0;
+  p{
+    margin: 0;
+    font-size: 16px;
+  }
+  span{
+    color: #0d47a1;
   }
 }

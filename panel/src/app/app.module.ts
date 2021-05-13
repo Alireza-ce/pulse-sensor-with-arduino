@@ -25,6 +25,7 @@ import { AnalysisComponent } from './modules/components/analysis/analysis.compon
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DatePipe } from '@angular/common';
 import { DetailComponent } from './modules/components/detail/detail.component';
+import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
 
 export function playerFactory() {
   return player;
@@ -48,7 +49,8 @@ export function playerFactory() {
     MatNativeDateModule,
     MatSnackBarModule,
     MDBBootstrapModule.forRoot(),
-    LottieModule.forRoot({ player: playerFactory })
+    LottieModule.forRoot({ player: playerFactory }),
+    MatSlideToggleModule
   ],
   providers: [MatDatepickerModule,
     SnackBarService,

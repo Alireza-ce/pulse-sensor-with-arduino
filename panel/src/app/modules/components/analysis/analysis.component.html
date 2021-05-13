@@ -1,28 +1,101 @@
 <div class="analysis">
   <div class="container">
-    <div style="display: block">
-      <canvas
-        mdbChart
-        [chartType]="chartType"
-        [datasets]="chartDatasets"
-        [labels]="chartLabels"
-        [colors]="chartColors"
-        [options]="chartOptions"
-        [legend]="true"
-        (chartHover)="chartHovered($event)"
-        (chartClick)="chartClicked($event)"
-      >
-      </canvas>
+    <div class="header-panel">
+      <ng-lottie [options]="optionsHeart"></ng-lottie>
+      <div class="head-panel">
+        <p class="serial-number">
+          شماره سریال دستگاه: <span> 123569882 </span>
+        </p>
+        <img src="/assets/images/pulse-oximeter.png" />
+      </div>
     </div>
-    <div style="display: block">
-        <canvas mdbChart
-            chartType="pie"
-            [datasets]="PieChartDatasets"
-            [labels]="PieChartLabels"
-            [colors]="PieChartColors"
-            [options]="chartOptions"
-            [legend]="true">
+    <div class="chart-row">
+      <div class="chart" style="display: block">
+        <canvas
+          mdbChart
+          [chartType]="chartType"
+          [datasets]="chartDatasets"
+          [labels]="chartLabels"
+          [colors]="chartColors"
+          [options]="chartOptions"
+          [legend]="true"
+          (chartHover)="chartHovered($event)"
+          (chartClick)="chartClicked($event)"
+        >
         </canvas>
       </div>
+      <div class="info">
+        <p class="title-chart">توضیحات نمودار خطی</p>
+        <p>
+          در این نمودار مقادیر تعداد ضربان قلب شما نمایش داده شده است و با کلیک
+          بر روی هر نقطه اطلاعات کامل تری دریافت میکنید
+        </p>
+      </div>
+    </div>
+
+    <div class="chart-row">
+      <div class="info">
+        <p class="title-chart">توضیحات نمودار دایره ای</p>
+        <p>
+        در این نمودار درصد دفعاتی که ضربان قلب شما دارای مقادیر نرمال، بالاتر از حد نرمال و پایین تر از حد نرمال می باشد را مشاهده میکنید
+        </p>
+        <div class="athlete">
+          <p *ngIf="isChecked">ورزشکار هستم</p>
+          <p *ngIf="!isChecked">ورزشکار نیستم</p>
+          <mat-slide-toggle (change)="onChange($event)"></mat-slide-toggle>
+        </div>
+        <p class="normal-percent"><span>{{normalPercent}}%</span> : ضربان قلب نرمال</p>
+        <p class="bad-percent"><span>{{badPercent}}%</span> : ضربان قلب غیر نرمال</p>
+      </div>
+      <div class="chart pie-chart"  style="display: block;">
+        <canvas
+          mdbChart
+          chartType="pie"
+          [datasets]="PieChartDatasets"
+          [labels]="PieChartLabels"
+          [colors]="PieChartColors"
+          [options]="chartOptions"
+          [legend]="true"
+        >
+        </canvas>
+      </div>
+    </div>
+
+    <div class="tahlil">
+      <p class="title">تحلیل روزانه</p>
+      <div class="tahlilha">
+        <div class="col-thahlil" *ngFor="let day of dayList">
+          <div class="content">
+            <p><span>{{day.date}}</span> : تاریخ</p>
+            <p class="normal-percent"><span>{{day.normalP}}%</span> : ضربان قلب نرمال</p>
+            <p class="bad-percent"><span>{{day.badP}}%</span> : ضربان قلب غیر نرمال</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tahlil">
+      <p class="title">تحلیل ماهانه</p>
+      <div class="tahlilha">
+        <div class="col-thahlil" *ngFor="let day of monthList">
+          <div class="content">
+            <p><span>{{day.date}}</span> : ماه</p>
+            <p class="normal-percent"><span>{{day.normalP}}%</span> : ضربان قلب نرمال</p>
+            <p class="bad-percent"><span>{{day.badP}}%</span> : ضربان قلب غیر نرمال</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="tahlil">
+      <p class="title">تحلیل سالانه</p>
+      <div class="tahlilha">
+        <div class="col-thahlil" *ngFor="let day of yearList">
+          <div class="content">
+            <p><span>{{day.date}}</span> : سال</p>
+            <p class="normal-percent"><span>{{day.normalP}}%</span> : ضربان قلب نرمال</p>
+            <p class="bad-percent"><span>{{day.badP}}%</span> : ضربان قلب غیر نرمال</p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

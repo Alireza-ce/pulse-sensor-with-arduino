@@ -18,7 +18,7 @@ const routes: Routes = [
     component: AnalysisComponent,
   },
   {
-    path: 'detail/:id',
+    path: 'detail/:id/:isChecked',
     component: DetailComponent,
   },
 ];

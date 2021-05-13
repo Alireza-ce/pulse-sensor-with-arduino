@@ -11,6 +11,11 @@
     <div class="analysis" *ngIf="!isHealth">
       <p class="title">تحلیل</p>
       <div class="row-s">
+        <div class="animation">
+         
+          <ng-lottie [options]=" optionsAdvise"></ng-lottie>
+          <!-- disease in lottiefiles -->
+        </div>
         <div class="symptoms">
           <p class="s-title">
             :اگر یکی از علايم زیر را دارید لطفا به پزشک متخصص مراجعه کنید
@@ -21,9 +26,7 @@
           <p class="symptom">درد قفسه سینه</p>
           <p class="symptom">پوست رنگ پریده</p>
         </div>
-        <div class="animation">
-          <!-- disease in lottiefiles -->
-        </div>
+     
       </div>
     </div>
   </div>
@@ -96,31 +99,39 @@
   </div>
   <div class="helping">
     <div class="container">
-      <p class="help-title">
-        چگونه ضربان قلب خود را نرمال کنیم؟
-        <!-- add thinking animation -->
-      </p>
-      <div class="advise">
-        <div class="col-ad">
-          <div class="content">
-            <div class="overlay"></div>
-            <img src="/assets/images/480568.jpg" />
-            <p>ورزش کردن</p>
+      <div class="help-row">
+        <div class="advise">
+          <div class="col-ad">
+            <div class="content">
+              <div class="overlay"></div>
+              <img src="/assets/images/480568.jpg" />
+              <p>ورزش کردن</p>
+            </div>
+          </div>
+
+          <div class="col-ad">
+            <div class="content">
+              <div class="overlay"></div>
+              <img src="/assets/images/Job-Stress-Philadelphia-1024x768.jpg" />
+              <p>کاهش استرس</p>
+            </div>
+          </div>
+          <div class="col-ad">
+            <div class="content">
+              <div class="overlay"></div>
+              <img src="/assets/images/wp4661021.jpg" />
+              <p>کاهش وزن</p>
+            </div>
           </div>
         </div>
-      
-        <div class="col-ad">
-          <div class="content">
-            <div class="overlay"></div>
-            <img src="/assets/images/Job-Stress-Philadelphia-1024x768.jpg" />
-            <p>کاهش استرس</p>
-          </div>
-        </div> <div class="col-ad">
-          <div class="content">
-            <div class="overlay"></div>
-            <img src="/assets/images/wp4661021.jpg" />
-            <p>کاهش وزن</p>
-          </div>
+
+        <div class="info">
+          <p class="help-title">
+          چگونه ضربان قلب خود را نرمال کنیم؟
+        </p>
+        <ng-lottie [options]="optionsHeart"></ng-lottie>
+        </div>
+
 
       </div>
     </div>

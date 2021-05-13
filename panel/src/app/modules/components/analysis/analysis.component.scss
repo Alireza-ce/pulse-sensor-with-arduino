@@ -1,0 +1,100 @@
+.header-panel {
+  display: flex;
+  justify-content: space-between;
+
+  ng-lottie {
+    width: 120px;
+  }
+
+  .head-panel {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 24px 0;
+
+    p {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    span {
+      color: #0d47a1;
+    }
+  }
+}
+
+.chart-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .chart {
+    flex: 3;
+    margin:0 32px;
+  }
+
+  .info {
+    flex: 2;
+    text-align: center;
+    border-radius: 25px;
+    padding: 24px;
+    box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
+      -5px -5px 5px rgba($color: #ffffff, $alpha: 0.7);
+
+    .title-chart {
+      font-weight: bold;
+      font-size: 20px;
+    }
+  }
+}
+
+.pie-chart{
+  flex: 2!important;
+}
+
+.normal-percent{
+  text-align: right;
+  color: #41aa33;
+}
+
+.bad-percent{
+  color: #a10d0d;
+  text-align: right;
+}
+
+.athlete{
+  display: flex;
+  justify-content: flex-end;
+  p{
+    margin-right: 4px;
+    color: #0d47a1;
+  }
+}
+
+.tahlil{
+  .title{
+    font-weight: bold;
+    margin: 24px 0;
+    text-align: center;
+    font-size: 28px;
+  }
+
+  .tahlilha{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    .col-thahlil{
+      width: 25%;
+      padding: 12px;
+     
+
+      .content{
+        text-align: right;
+        border-radius: 20px;
+        padding: 12px;
+        box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
+        -5px -5px 5px rgba($color: #ffffff, $alpha: 0.7);
+      }
+    }
+  }
+}

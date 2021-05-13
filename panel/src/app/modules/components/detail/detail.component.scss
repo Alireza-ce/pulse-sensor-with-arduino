@@ -56,10 +56,15 @@
   .row-s {
     display: flex;
     justify-content: flex-end;
+    margin-top: 24px;
+    .animation{
+      flex: 2;
+    }
   }
 
   .symptoms {
     text-align: right;
+    flex: 3;
     padding: 12px;
     border-radius: 5px;
     box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
@@ -142,7 +147,7 @@
       .content {
         padding: 8px;
         text-align: center;
-        border-radius: 5px;
+        border-radius: 25px;
         box-shadow: 5px 5px 5px rgba($color: #d4cece, $alpha: 0.7),
           -5px -5px 5px rgba($color: #ffffff, $alpha: 0.7);
         background-color: #eee;
@@ -159,20 +164,38 @@
 
 .helping {
   padding: 64px 0;
+ border-top: 1px solid #4e4b4b;
+  .help-row{
+    display: flex;
+
+  }
+
+  .info{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    ng-lottie{
+      width: 50%;
+      margin-top: 24px;
+    }
+  }
 
   .help-title {
-    font-size: 30px;
+    font-size: 28px;
     font-weight: bold;
     text-align: center;
-    color: #383434;
+    color: #4e4b4b;
   }
 
   .advise {
+    flex: 1;
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    margin-top: 32px;
+    padding: 0 32px;
     .col-ad {
-      width: 33.3%;
+      width: 50%;
 
       .content {
         padding: 0 24px 24px 24px;
@@ -188,6 +211,8 @@
           width: 100%;
           height: 80%;
           z-index: 0;
+          box-shadow: 10px 10px 10px rgba($color: #c7c5c5, $alpha: 0.8);
+          border-radius: 12px;
         }
 
         img {
@@ -195,6 +220,7 @@
           width: 100%;
           position: relative;
           height: 170px;
+          border-radius: 12px;
    
         }
 
