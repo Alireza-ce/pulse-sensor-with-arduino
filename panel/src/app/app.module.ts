@@ -25,13 +25,14 @@ import { AnalysisComponent } from './modules/components/analysis/analysis.compon
 import { MDBBootstrapModule } from 'angular-bootstrap-md';
 import { DatePipe } from '@angular/common';
 import { DetailComponent } from './modules/components/detail/detail.component';
-import {MatSlideToggleModule} from '@angular/material/slide-toggle'; 
+import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { SignUpComponent } from './modules/components/sign-up/sign-up.component'; 
 
 export function playerFactory() {
   return player;
 }
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PanelComponent, AnalysisComponent, DetailComponent],
+  declarations: [AppComponent, LoginComponent, PanelComponent, AnalysisComponent, DetailComponent, SignUpComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

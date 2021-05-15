@@ -11,14 +11,24 @@ export class ApiService {
   constructor(private http: HttpClient) { }
 
   getFromDate(date): Observable<any> {
-    let url = environment.baseUrl + 'bpm-from-to-date';
+    let url = environment.baseUrl + 'device/bpm-from-to-date';
     console.log(date)
     return this.http.post(url,date);
   }
 
   checkSerial(order): Observable<any> {
-    let url = environment.baseUrl + 'bpm';
+    let url = environment.baseUrl + 'device/bpm';
     return this.http.post(url, order);
+  }
+
+  login(user): Observable<any> {
+    let url = environment.baseUrl + 'user/login';
+    return this.http.post(url, user);
+  }
+
+  signUp(user): Observable<any> {
+    let url = environment.baseUrl + 'user/sign-up';
+    return this.http.post(url, user);
   }
 
 }

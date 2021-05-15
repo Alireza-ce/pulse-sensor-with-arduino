@@ -1,0 +1,35 @@
+<div class="login">
+    <div class="container">
+      <div class="title-box">
+        <ng-lottie [options]="optionsHeart"></ng-lottie>
+        <p class="main-title">سیستم تحلیل ضربان<span style="color: red;"> قلب </span></p>
+      </div>
+      <div class="login-form">
+        <form (ngSubmit)="submit()">
+          <div class="form-box">
+            <p class="form-title">
+              ورود
+            </p>
+            <mat-form-field>
+              <mat-label>ایمیل</mat-label>
+              <input matInput [formControl]="email" placeholder="ایمیل" />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>نام</mat-label>
+              <input matInput [formControl]="name" placeholder="نام" />
+            </mat-form-field>
+            <mat-form-field>
+              <mat-label>رمز عبور</mat-label>
+              <input matInput [formControl]="password" placeholder="رمز عبور" />
+            </mat-form-field>
+            <button mat-raised-button color="primary">تایید</button>
+            <div class="link">
+              <a [routerLink]="['/']">حساب کاربری دارید؟ ورود</a>
+            </div>
+          </div> 
+        </form>
+        <!-- <ng-lottie [options]="options"></ng-lottie> -->
+      </div>
+    </div>
+  </div>
+  

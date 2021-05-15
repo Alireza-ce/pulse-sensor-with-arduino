@@ -7,11 +7,12 @@ import { AnimationItem } from 'lottie-web';
 import { AnimationOptions } from 'ngx-lottie';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.scss'],
+  selector: 'app-sign-up',
+  templateUrl: './sign-up.component.html',
+  styleUrls: ['./sign-up.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class SignUpComponent implements OnInit {
+  name = new FormControl('', [Validators.required]);
   email = new FormControl('', [Validators.required]);
   password = new FormControl('', [Validators.required]);
   options: AnimationOptions = {
@@ -32,16 +33,15 @@ export class LoginComponent implements OnInit {
 
   submit() {
     this.apiService
-      .login({ email: this.email.value, password: this.password.value })
+      .signUp({ email: this.email.value, password: this.password.value , name:this.name.value })
       .subscribe(
         (data) => {
-          localStorage.setItem('email',this.email.value);
-          localStorage.setItem('name',data);
-          this.router.navigate(['/panel'])
+          //localStorage.setItem('email',this.email.value);
+          // this.router.navigate(['/panel'])
         },
         (error) => {
           this.snackBarService.showSnackBar(
-            'ایمیل یا رمز عبور اشتباه است',
+            'ایمیل در سیستم ثبت شده است!!',
             'warn',
             4000
           );

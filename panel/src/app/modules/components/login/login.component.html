@@ -7,19 +7,24 @@
     <div class="login-form">
       <form (ngSubmit)="submit()">
         <div class="form-box">
-
-        <p class="form-title">
-          ورود
-        </p>
-        <mat-form-field>
-          <mat-label>شماره سریال دستگاه</mat-label>
-          <input matInput [formControl]="serial" placeholder="شماره سریال" />
-        </mat-form-field>
-        <button mat-raised-button color="primary">تایید</button>
-                  
-      </div>
+          <p class="form-title">
+            ورود
+          </p>
+          <mat-form-field>
+            <mat-label>ایمیل</mat-label>
+            <input matInput [formControl]="email" placeholder="ایمیل" />
+          </mat-form-field>
+          <mat-form-field>
+            <mat-label>رمز عبور</mat-label>
+            <input matInput [formControl]="password" placeholder="رمز عبور" />
+          </mat-form-field>
+          <button mat-raised-button color="primary">تایید</button>
+          <div class="link">
+            <a [routerLink]="['/sign-up']">حساب کاربری ندارید؟ ثبت نام</a>
+          </div>
+        </div> 
       </form>
-      <ng-lottie [options]="options"></ng-lottie>
+      <!-- <ng-lottie [options]="options"></ng-lottie> -->
     </div>
   </div>
 </div>
