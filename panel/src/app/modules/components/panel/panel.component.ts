@@ -11,7 +11,7 @@ import { SnackBarService } from '../../services/snack-bar.service';
   styleUrls: ['./panel.component.scss']
 })
 export class PanelComponent implements OnInit {
-  serialDevice = localStorage.getItem('serial');
+  userName = localStorage.getItem('name');
   numberBpm = new FormControl('', [Validators.required, Validators.max(100), Validators.min(10)]);
   range = new FormGroup({
     start: new FormControl(),
@@ -31,7 +31,7 @@ export class PanelComponent implements OnInit {
     this.apiService.getFromDate({
       to_date: this.range.get('end').value,
       from_date: this.range.get('start').value,
-      device_id: localStorage.getItem('serial')
+      email: localStorage.getItem('email')
     }).subscribe(data => {
       console.log(data)
       if (data.length < 1) {
@@ -48,7 +48,7 @@ export class PanelComponent implements OnInit {
       this.snackBarService.showSnackBar('عدد وارد شده در بازه مشخص شده نمی باشد', 'warn', 4000);
       return;
     }
-    this.apiService.checkSerial({ device_id: localStorage.getItem('serial') }).subscribe(data => {
+    this.apiService.checkSerial({ email: localStorage.getItem('email') }).subscribe(data => {
       let bpmList = [];
       for (let i = data.length-1; i > 0; i--) {
 

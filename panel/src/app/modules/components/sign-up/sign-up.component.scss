@@ -33,6 +33,10 @@
     }
     .form-box {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 90%;
       padding: 32px;
       border-radius: 5px;

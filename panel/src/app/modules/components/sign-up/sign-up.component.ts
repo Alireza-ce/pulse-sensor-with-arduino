@@ -13,7 +13,7 @@ import { AnimationOptions } from 'ngx-lottie';
 })
 export class SignUpComponent implements OnInit {
   name = new FormControl('', [Validators.required]);
-  email = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required,Validators.email]);
   password = new FormControl('', [Validators.required]);
   options: AnimationOptions = {
     path: '/assets/character.json',
@@ -32,12 +32,21 @@ export class SignUpComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
+    if(this.name.invalid || this.password.invalid || this.email.invalid){
+      return
+    }
+
     this.apiService
       .signUp({ email: this.email.value, password: this.password.value , name:this.name.value })
       .subscribe(
         (data) => {
-          //localStorage.setItem('email',this.email.value);
-          // this.router.navigate(['/panel'])
+          this.snackBarService.showSnackBar(
+            'ثبت نام با موفقیت انجام شد',
+            'primary',
+            4000
+          );
+          
+          this.router.navigate(['/'])
         },
         (error) => {
           this.snackBarService.showSnackBar(

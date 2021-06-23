@@ -13,6 +13,7 @@ export class AnalysisComponent implements OnInit {
   optionsHeart: AnimationOptions = {
     path: '/assets/heartbeat.json',
   };
+  userName = localStorage.getItem('name')
   chartLabels: Array<any> = [];
   PieChartDatasets: Array<any> = [];
   PieChartLabels: Array<any> = [];

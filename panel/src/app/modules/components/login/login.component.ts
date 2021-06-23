@@ -12,7 +12,7 @@ import { AnimationOptions } from 'ngx-lottie';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit {
-  email = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required,Validators.email]);
   password = new FormControl('', [Validators.required]);
   options: AnimationOptions = {
     path: '/assets/character.json',
@@ -31,12 +31,17 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   submit() {
+    if(this.email.invalid || this.password.invalid){
+      return
+    }
+
     this.apiService
       .login({ email: this.email.value, password: this.password.value })
       .subscribe(
         (data) => {
           localStorage.setItem('email',this.email.value);
-          localStorage.setItem('name',data);
+          localStorage.setItem('name',data?.user[0]?.name);
+          console.log(data)
           this.router.navigate(['/panel'])
         },
         (error) => {
