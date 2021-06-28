@@ -28,6 +28,7 @@ export class PanelComponent implements OnInit {
   }
 
   submitDate() {
+    console.log( this.range.get('end').value)
     this.apiService.getFromDate({
       to_date: this.range.get('end').value,
       from_date: this.range.get('start').value,

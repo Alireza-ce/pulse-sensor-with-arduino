@@ -15,7 +15,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MatNativeDateModule, MAT_DATE_LOCALE } from '@angular/material/core';
+import { DateAdapter, MatNativeDateModule, MAT_DATE_FORMATS, MAT_DATE_LOCALE } from '@angular/material/core';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { SnackBarService } from './modules/services/snack-bar.service';
@@ -28,11 +28,14 @@ import { DetailComponent } from './modules/components/detail/detail.component';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import { SignUpComponent } from './modules/components/sign-up/sign-up.component'; 
 
+import { MaterialPersianDateAdapter, PERSIAN_DATE_FORMATS } from "./modules/services/material.persian-date.adapter";
+import { MomentJalaaliPipe } from './modules/CustomPipe/moment-jalaali.pipe';
+
 export function playerFactory() {
   return player;
 }
 @NgModule({
-  declarations: [AppComponent, LoginComponent, PanelComponent, AnalysisComponent, DetailComponent, SignUpComponent],
+  declarations: [AppComponent, LoginComponent, PanelComponent, AnalysisComponent, DetailComponent, SignUpComponent, MomentJalaaliPipe],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -55,6 +58,8 @@ export function playerFactory() {
   ],
   providers: [MatDatepickerModule,
     SnackBarService,
+    { provide: DateAdapter, useClass: MaterialPersianDateAdapter, deps: [MAT_DATE_LOCALE] },
+    { provide: MAT_DATE_FORMATS, useValue: PERSIAN_DATE_FORMATS },
     {
       provide: HTTP_INTERCEPTORS,
       useClass: HttpInterceptorService,
