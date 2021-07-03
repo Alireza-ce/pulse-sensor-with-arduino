@@ -7,7 +7,8 @@ import * as moment from 'moment-timezone';
 export class MomentJalaaliPipe implements PipeTransform {
   transform(value: any, args?: any): any {
     console.log(value,args)
-    return moment.tz(value, 'Asia/Tehran').format(args)
+    let today = new Date(value).toLocaleDateString('fa-IR');
+    return today
    
   }
 }

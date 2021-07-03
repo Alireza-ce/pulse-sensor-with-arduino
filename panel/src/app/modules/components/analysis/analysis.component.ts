@@ -22,6 +22,7 @@ export class AnalysisComponent implements OnInit {
   normalPercent;
   badPercent;
   sampleData = JSON.parse(localStorage.getItem('bpmList'));
+ //is athlete. == is checked
   isChecked = false;
   isFirst = true;
   dayList = [];
@@ -55,7 +56,7 @@ export class AnalysisComponent implements OnInit {
       }
       if (this.isFirst) {
         normalData.push(el.bpm);
-        this.chartLabels.push(this.datePipe.transform(el.date, 'M/d-h:mm:ss'));
+        this.chartLabels.push(this.datePipe.transform(new Date(el.date).toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728)), 'M/d-h:mm:ss'));
       }
     });
 
@@ -97,9 +98,9 @@ export class AnalysisComponent implements OnInit {
   public chartOptions: any = {
     responsive: true,
   };
+
   public chartClicked(e: any): void {
     if (e.active.length > 0) {
-      console.log(this.chartDatasets[0].data[e.active[0]._index]);
       let id = this.chartDatasets[0].data[e.active[0]._index];
       this.router.navigate(['/detail', id, this.isChecked]);
     }
@@ -120,7 +121,7 @@ export class AnalysisComponent implements OnInit {
   calcDayEqual() {
     for (let i = 0; i < this.sampleData.length; i++) {
       let findIt = false;
-      let today = this.datePipe.transform(this.sampleData[i].date, 'yyyy/M/d');
+      let today = this.datePipe.transform(new Date(this.sampleData[i].date).toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728)), 'yyyy/M/d');
       if (this.dayList.length < 1) {
         this.dayList = [{ date: today }];
 
@@ -192,15 +193,12 @@ export class AnalysisComponent implements OnInit {
       el.normalP=normalP;
       el.badP = 100 - normalP;
     });
-
-    console.log(this.dayList)
-    console.log(this.dayList);
   }
 
   calcMonthEqual() {
     for (let i = 0; i < this.sampleData.length; i++) {
       let findIt = false;
-      let today = this.datePipe.transform(this.sampleData[i].date, 'yyyy/M');
+      let today = this.datePipe.transform(new Date(this.sampleData[i].date).toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728)), 'yyyy/M');
       if (this.monthList.length < 1) {
         this.monthList = [{ date: today }];
 
@@ -269,14 +267,15 @@ export class AnalysisComponent implements OnInit {
       normalP = parseInt(`${normalP}`);
       el.normalP=normalP;
       el.badP = 100 - normalP;
+      el.showDate =  `${el.date}/1`
     });
-    console.log(this.monthList);
+
   }
 
   calcYearEqual() {
     for (let i = 0; i < this.sampleData.length; i++) {
       let findIt = false;
-      let today = this.datePipe.transform(this.sampleData[i].date, 'yyyy');
+      let today = this.datePipe.transform(new Date(this.sampleData[i].date).toLocaleDateString('fa-IR').replace(/([۰-۹])/g, token => String.fromCharCode(token.charCodeAt(0) - 1728)), 'yyyy');
       if (this.yearList.length < 1) {
         this.yearList = [{ date: today }];
 
@@ -345,7 +344,7 @@ export class AnalysisComponent implements OnInit {
       normalP = parseInt(`${normalP}`);
       el.normalP=normalP;
       el.badP = 100 - normalP;
+      el.showDate =  `${el.date}/10/10`
     });
-    console.log(this.yearList);
   }
 }
